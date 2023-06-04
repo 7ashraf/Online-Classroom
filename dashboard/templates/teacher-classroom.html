@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<h2>Students</h2>
+<ul>
+    {%for student in students%}
+        <li>{{student}}</li>
+    {%empty%}
+        <h2>No Students</h2>
+    {%endfor%}
+</ul>
+
+<h2>Add task</h2>
+<form action="#" method="post">
+    {%csrf_token%}
+    <input name="taskName" type="text" placeholder="task name" >
+    <br>
+    <button type="submit" class="btn btn-primary", style="margin-top: 8px;">add task</button>
+
+</form>
+
+
+
+
+
+{%endblock%}

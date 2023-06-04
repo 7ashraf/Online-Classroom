@@ -1,0 +1,16 @@
+{%extends "base.html"%}{%block content%}
+
+<h1>Teacher Dashboard</h1>
+<h2>Classrooms</h2>
+<ul>
+    {%for classroom in classrooms%}
+        <li><a href="{{classroom.name}}">{{classroom.name}}</a></li>
+    {%endfor%}
+</ul>
+
+
+
+<a href="create-classroom">Create classroom</a>
+
+<a href="/logout">logout</a>
+{%endblock%}

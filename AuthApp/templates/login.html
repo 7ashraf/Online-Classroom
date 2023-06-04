@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{%block content%}
+<style>
+    #fsorm{
+
+        margin: auto;
+        width: 45%;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        height: 10rem;
+        
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-white">
+                <div class="card-body">
+                    <h1>Login</h1>
+                    <form method="post" action="" id="form">
+                        {%csrf_token%}
+                        {{form|crispy}}
+                        <button type="submit" class="btn btn-primary", style="margin-top: 8px;">Login</button>
+                        <br>
+                        <br>
+                        <a href="/register">register!</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+{%endblock%}

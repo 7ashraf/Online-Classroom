@@ -1,0 +1,40 @@
+{%extends "base.html"%}{%block content%}
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+
+<h1>Student Dashboard</h1>
+<a href="/logout">logout</a>
+<ul>
+    {%for classroom in classrooms%}
+        <li>
+            <a href="{{classroom.name}}">{{classroom.name}}</a>
+        </li>
+    {%endfor%}
+</ul>
+<form action="/dashboard/" class="form-floating" method="post">
+    {%csrf_token%}
+    <input type="text" class="form-control" id="name" placeholder="classroom name" name="name">
+    <label for="floatingInputValue">classroom name</label>
+    <button type="submit" class="btn btn-primary", style="margin-top: 8px;">join classroom</button>
+  </form>
+<br>
+<br>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  {%endblock%}
